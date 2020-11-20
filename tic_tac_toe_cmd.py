@@ -23,6 +23,7 @@ ct=0
 
 def checkwin(pmoves,lisp,win):
 	winner=0
+	winning=[]
 	li = []
 	for x in pmoves:
 		li.append(x)
@@ -53,11 +54,12 @@ def checkwin(pmoves,lisp,win):
 	for m in lisp:
 		if m in win:
 			winner=1
+			winning=m
 			break
 		else:
 			winner=0
 			
-	return lisp,pmoves,winner,win
+	return lisp,pmoves,winner,win,winning
 	
 turn=1
 winner=0
@@ -87,6 +89,9 @@ while ct<9:
 	elif 7<=player<10:
 		row = 2
 		cell = player-7
+	else:
+		print("Invalid choice.")
+		continue
 		
 	if board[row][cell] != "-":
 		print("Invalid choice.")
@@ -100,9 +105,9 @@ while ct<9:
 		print()
 		print(board)
 		print()
-		lisp1,p1moves,winner,win = checkwin(p1moves,lisp1,win)
+		lisp1,p1moves,winner,win,winning = checkwin(p1moves,lisp1,win)
 		if winner==1:
-			print("P1 wins!\n")
+			print("P1 wins!\nSet: {}".format(winning)")
 			quit()
 		else:
 			turn=2
@@ -113,9 +118,9 @@ while ct<9:
 		print()
 		print(board)
 		print()
-		lisp2,p2moves,winner,win = checkwin(p2moves,lisp2,win)
+		lisp2,p2moves,winner,win,winning = checkwin(p2moves,lisp2,win)
 		if winner==1:
-			print("P2 wins!\n")
+			print("P2 wins!\nSet: {}".format(winning))
 			quit()
 		else:
 			turn=1
