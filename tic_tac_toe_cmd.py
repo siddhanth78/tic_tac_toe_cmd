@@ -1,5 +1,4 @@
 import numpy as np
-import os
 
 board = np.array([["-","-","-"],
 					["-","-","-"],
@@ -70,6 +69,8 @@ print()
 
 while ct<9:
 	try:
+		print("P1 moves so far: {}".format(p1moves))
+		print("P2 moves so far: {}".format(p2moves))
 		player = int(input("P{}: ".format(turn)))
 	except:
 		print("Invalid choice.")
