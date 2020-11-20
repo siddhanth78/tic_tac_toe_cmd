@@ -107,7 +107,7 @@ while ct<9:
 		print()
 		lisp1,p1moves,winner,win,winning = checkwin(p1moves,lisp1,win)
 		if winner==1:
-			print("P1 wins!\nSet: {}".format(winning))
+			print("P1 wins!\nSet: {}\n".format(winning))
 			quit()
 		else:
 			turn=2
@@ -120,7 +120,7 @@ while ct<9:
 		print()
 		lisp2,p2moves,winner,win,winning = checkwin(p2moves,lisp2,win)
 		if winner==1:
-			print("P2 wins!\nSet: {}".format(winning))
+			print("P2 wins!\nSet: {}\n".format(winning))
 			quit()
 		else:
 			turn=1
